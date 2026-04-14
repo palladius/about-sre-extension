@@ -1,0 +1,8 @@
+Time,Description,Milestone
+2026-03-30 17:25:00 UTC,Istio Gateway created (The "Istio Era" begins),
+2026-03-31 19:59:00 UTC,frontend-canary deployed with typo in env var PRODUCT_CATALOG_SERVICE_ADDR,Start of Incident
+2026-04-02 09:30:00 UTC,Spike in user reports of "down" site,Incident Detected
+2026-04-02 10:18:00 UTC,GKE Autopilot node migrations observed (causing pod evictions),
+2026-04-02 11:00:00 UTC,Gemini CLI SRE identifies OTel misconfig (binding to 127.0.0.1) and typo in frontend-canary,
+2026-04-02 11:15:00 UTC,Investigation wrapped up, pending mitigation rollout,Mitigation
+2026-04-02 12:00:00 UTC,Full rollout of fixes and health checks stable,Incident End

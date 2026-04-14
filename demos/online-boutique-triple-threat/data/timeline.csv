@@ -1,0 +1,17 @@
+Time,Description,Milestone
+2026-04-04 12:20:00 UTC,Firewall rule 'frontend-ingress-v2' created (blocked port 80/443/8080),Start of Incident
+2026-04-04 12:23:00 UTC,'frontend-canary' deployment updated/progressed with typo 'PRODUCT_CATALOG_SERVICE_ADDR=productcatalogservices',
+2026-04-04 12:25:00 UTC,'checkout-virtualservice' created with 100% fault injection (503s),
+2026-04-04 12:00:00 UTC,ricc@ started investigation due to user reported timeouts at http://35.224.45.171/,Incident Detected
+2026-04-04 12:01:00 UTC,Verified timeout via curl. Connection timed out after 5s,
+2026-04-04 12:05:00 UTC,Found events indicating 'frontend-canary' pods failing probes with 503 errors,
+2026-04-04 12:06:00 UTC,Discovered 'checkout-virtualservice' injecting 100% 503 errors,
+2026-04-04 12:08:00 UTC,Found typo in 'frontend-canary' deployment,
+2026-04-04 12:09:00 UTC,Confirmed frontend traffic split 50/50 between stable and misconfigured canary,
+2026-04-04 12:11:00 UTC,Discovered Firewall rule 'frontend-ingress-v2' explicitly DENYING traffic,
+2026-04-04 12:35:00 UTC,Deleted malicious firewall rule 'frontend-ingress-v2'. Site became reachable,Mitigation
+2026-04-04 12:36:00 UTC,Deleted Istio VirtualService 'checkout-virtualservice',
+2026-04-04 12:37:00 UTC,Patched 'frontend-canary' deployment fixing the typo,
+2026-04-04 12:40:00 UTC,'frontend-canary' rollout confirmed successful,
+2026-04-04 12:41:00 UTC,curl returned 200 OK from external IP,
+2026-04-04 12:45:00 UTC,loadgenerator logs show failure rates returning to baseline levels,Incident end

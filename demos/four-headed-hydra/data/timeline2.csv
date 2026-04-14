@@ -1,0 +1,11 @@
+Time,Description,Milestone,Proof
+2026-03-30T17:25:08Z,Istio Gateway created to handle cluster ingress.,None,kubectl metadata.creationTimestamp for 'istio-gateway'
+2026-03-31T19:59:46Z,frontend-canary deployed with typo in PRODUCT_CATALOG_SERVICE_ADDR.,None,kubectl metadata.creationTimestamp for 'frontend-canary'
+2026-04-02T00:03:13Z,First recorded 500 errors and "context canceled" in container logs today.,Detection,GCP Cloud Logging filter (textPayload:500 OR context canceled)
+2026-04-02T10:18:55Z,GKE Autopilot triggers node migration; replacement node registered.,None,kubectl metadata.creationTimestamp for node 'gk3-online-boutique-pool-2-2a03cd9c-r9hr'
+2026-04-02T11:00:00Z,SRE (Gemini CLI) initiated cluster-wide health investigation.,Start,Internal session begin (Turn 1)
+2026-04-02T11:22:00Z,Root cause identified: opentelemetrycollector bound to 127.0.0.1 causing gRPC 111 errors.,None,Investigation log entry
+2026-04-02T11:30:00Z,Secondary cause identified: frontend-canary deployed on 2026-03-31 has a typo: productcatalogservices (extra 's').,None,Investigation log entry
+2026-04-02T11:45:00Z,Red Herring Clarified: paymentservice rejecting visa_electron is a legacy validation rule and NOT the cause of the current cluster instability.,None,Investigation log entry
+2026-04-02T12:05:00Z,Correlation confirmed: Errors started at 00:00:00Z, preceding node migrations.,None,Investigation log entry
+2026-04-02T11:45:00Z,Incident resolved: Remediation plan approved and postmortem drafted.,Resolution,Internal session turn summary
