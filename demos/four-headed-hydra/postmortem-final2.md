@@ -38,10 +38,10 @@ Want to see the carnage for yourself? Run these commands:
 gcloud logging read "severity>=ERROR timestamp>='2026-04-02T00:00:00Z'" --project=sre-next --limit=10
 
 # 2. Find the "Service-S" Typo (Canary evidence)
-gcloud logging read "jsonPayload.error:"produced zero addresses"" --project=sre-next --limit=5
+gcloud logging read "jsonPayload.error:\"produced zero addresses\"" --project=sre-next --limit=5
 
 # 3. Witness the OTel Connection Refusal (111 error)
-gcloud logging read "textPayload:"delayed connect error: 111"" --project=sre-next --limit=5
+gcloud logging read "textPayload:\"delayed connect error: 111\"" --project=sre-next --limit=5
 
 # 4. Spot the Blackhole 🕳️
 kubectl get virtualservice checkout-blackhole -o yaml
@@ -86,8 +86,13 @@ Detected via user reports of "Intermittent Awfulness" 📉. Our "Search for 500s
 
 ## Metrics & Visualization 📊
 
+### High-Resolution Incident View
+![Improved Incident Graphs](images/improved_incident_graphs.png)
+*Figure 1: Detailed "Four-Headed Hydra" view showing overlapping failure vectors.*
+
+### Baseline Incident Graph
 ![Incident Graph](images/incident_graph.png)
-*Figure 1: Incident timeline showing the "Hydra" spike and the satisfying "Remediation Drop" in UTC.*
+*Figure 2: Primary incident timeline showing the satisfying "Remediation Drop" in UTC.*
 
 ## Action Items 📋
 
