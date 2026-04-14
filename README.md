@@ -1,6 +1,6 @@
-# About SRE Extension
+> View this repository as a website: [https://palladius.github.io/about-sre-extension/](https://palladius.github.io/about-sre-extension/)
 
-Self: https://github.com/palladius/about-sre-extension/
+# about-sre-extension
 
 ## Motivation
 
@@ -10,11 +10,11 @@ The SRE Extension for Gemini CLI streamlines incident response by integrating de
 
 We have validated the SRE Extension across several simulated incident scenarios:
 
-### Incident 1: Random 500s (Istio Service Discovery Failure)
+### Incident 1: Random 500s (Istio Service Discovery Failure) (2026-04-09)
 - **Postmortem:** [Istio Service Discovery Failure](demos/20260409-demo06a/post-mortem/postmortem-final.md)
 - **Summary:** Independently investigated HTTP 500 errors and identified a faulty Istio `VirtualService` with a 100% abort fault, uncovering a latent instability in the Istio control plane.
 
-### Incident 2: Online Boutique Cluster Outage (Firewall & Canary)
+### Incident 2: Online Boutique Cluster Outage (Firewall & Canary) (2026-04-14)
 - **Postmortem:** [Online Boutique Cluster Outage](demos/20260414-outage/postmortem-final.md)
 - **Summary:** Autonomously diagnosed a "poisonous" canary deployment with an environment variable typo and isolated a VPC firewall rule blocking external traffic.
 
@@ -27,6 +27,11 @@ We have validated the SRE Extension across several simulated incident scenarios:
 - **Postmortem:** [Four-Headed Hydra Postmortem](demos/four-headed-hydra/postmortem-final2.md)
 - **Summary:** Investigated a "Hydra" of failures including OTel collector misconfiguration, an Istio "blackhole," and GKE node churn.
 - **Why it's cool:** Uses high-resolution incident visualizations and an engaging, emoji-rich narrative that showcases the AI's "personality."
+
+### Incident 5: AI-Generated Architecture Insights (demo03) (2026-04-02)
+- **Postmortem:** [Visual Investigation](demos/online-boutique-visual-investigation/postmortem-final.md)
+- **Summary:** Used Gemini's multimodal capabilities to generate and annotate architecture diagrams representing the incident's impact.
+- **Why it's cool:** Demonstrates using `nano-banana` to bridge the gap between abstract logs and visual system understanding during a complex service-mesh failure.
 
 ## Execution Safety
 
@@ -42,8 +47,3 @@ If you'd like to be notified when the SRE Extension is released, please **star**
 ## Our environment
 
 Tests were conducted on the [Microservices Demo](https://github.com/GoogleCloudPlatform/microservices-demo) running on GKE, using GCP Cloud Logging and Monitoring for telemetry.
-
-### Incident 5: AI-Generated Architecture Insights (demo03)
-- **Postmortem:** [Visual Investigation](demos/online-boutique-visual-investigation/postmortem-final.md)
-- **Summary:** Used Gemini's multimodal capabilities to generate and annotate architecture diagrams representing the incident's impact.
-- **Why it's cool:** Demonstrates using `nano-banana` to bridge the gap between abstract logs and visual system understanding during a complex service-mesh failure.
