@@ -1,0 +1,8 @@
+Time,Description,Milestone
+2026-04-14 04:18:00 US/Pacific,Investigation Start. Human reported random 500s on http://35.224.93.4/.,Start of Incident
+2026-04-14 04:25:00 US/Pacific,Discovery: Typo in `frontend-canary` env var `PRODUCT_CATALOG_SERVICE_ADDR` (`productcatalogservices`).,Incident detected
+2026-04-14 04:30:00 US/Pacific,Mitigation: Deleted `frontend-canary` deployment.,
+2026-04-14 04:40:00 US/Pacific,Mitigation: Force-deleted zombie `frontend` pod which was non-responsive to traffic.,
+2026-04-14 04:42:00 US/Pacific,Discovery: Poisonous firewall rule `frontend-ingress-v2` (Priority 1 DENY tcp:80 443 8080).,
+2026-04-14 04:45:00 US/Pacific,Mitigation: Deleted `frontend-ingress-v2` firewall rule.,Mitigation
+2026-04-14 04:46:00 US/Pacific,Verification: Site restored (HTTP 200).,Incident end
