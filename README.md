@@ -1,4 +1,6 @@
-# about-sre-extension
+> View this repository as a website: [https://palladius.github.io/about-sre-extension/](https://palladius.github.io/about-sre-extension/)
+
+# About SRE Extension
 
 ## Motivation
 
@@ -40,3 +42,8 @@ If you'd like to be notified when the SRE Extension is released, please **star**
 ## Our environment
 
 Tests were conducted on the [Microservices Demo](https://github.com/GoogleCloudPlatform/microservices-demo) running on GKE, using GCP Cloud Logging and Monitoring for telemetry.
+
+### Incident 5: AI-Generated Architecture Insights (demo03)
+- **Postmortem:** [Visual Investigation](demos/online-boutique-visual-investigation/postmortem-final.md)
+- **Summary:** Used Gemini's multimodal capabilities to generate and annotate architecture diagrams representing the incident's impact.
+- **Why it's cool:** Demonstrates using `nano-banana` to bridge the gap between abstract logs and visual system understanding during a complex service-mesh failure.

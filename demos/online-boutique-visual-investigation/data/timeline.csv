@@ -1,0 +1,10 @@
+Time,Description,Milestone
+2026-04-02 17:46:17 CEST,Investigation started. Customer reported random 500 errors.,Incident Detected
+2026-04-02 17:52:10 CEST,Verified cluster `online-boutique` in `sre-next` project.,
+2026-04-02 17:53:45 CEST,Discovered a very recent `frontend-canary` pod (age ~75s).,
+2026-04-02 17:54:00 CEST,Checked logs for `frontend-canary-6d8d6d6d64-lf6vf`. Found `500` errors and `rpc error: code = Unavailable desc = name resolver error: produced zero addresses`.,
+2026-04-02 17:56:30 CEST,Analyzed `frontend-canary` deployment. Found a typo in `PRODUCT_CATALOG_SERVICE_ADDR`: it's set to `productcatalogservices:3550` (plural) instead of `productcatalogservice:3550` (singular).,Start of Incident
+2026-04-02 17:57:00 CEST,Confirmed the `frontend` service uses selector `app: frontend` which matches BOTH the healthy `frontend` and the broken `frontend-canary`.,
+2026-04-02 18:01:00 CEST,Discovered `checkout-blackhole` VirtualService created ~18m ago. It was injecting a **100% 503 fault** for all traffic to `checkoutservice`.,
+2026-04-02 18:04:00 CEST,Deleted `frontend-canary` deployment and `checkout-blackhole` VirtualService.,Mitigation
+2026-04-02 18:05:00 CEST,Ran multiple `curl` tests. All returned `200 OK`. Service is stabilized.,Incident End
