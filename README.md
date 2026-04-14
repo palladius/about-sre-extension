@@ -1,6 +1,6 @@
-> View this repository as a website: [https://palladius.github.io/about-sre-extension/](https://palladius.github.io/about-sre-extension/)
-
 # About SRE Extension
+
+Self: https://github.com/palladius/about-sre-extension/
 
 ## Motivation
 
