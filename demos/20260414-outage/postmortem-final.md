@@ -52,7 +52,7 @@ Internal demo environment; no formal customer comms sent.
 
 ## Incident Visuals
 
-![Incident Error Volume](../../evidence/incident_graph_v2.png)
+![Incident Error Volume](evidence/incident_graph_v2.png)
 
 ## Action Items
 
