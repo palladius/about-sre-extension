@@ -10,33 +10,33 @@ The SRE Extension for Gemini CLI streamlines incident response by integrating de
 
 We have validated the SRE Extension across several simulated incident scenarios:
 
-### Incident 1: Random 500s (Istio Service Discovery Failure) (2026-04-09)
-- **Postmortem:** [Istio Service Discovery Failure](demos/20260409-demo06a/post-mortem/postmortem-final.md)
-- **Summary:** Independently investigated HTTP 500 errors and identified a faulty Istio `VirtualService` with a 100% abort fault, uncovering a latent instability in the Istio control plane.
+### Incident 1: Frontend Canary Typo (Bluegreen - demo01) (March 30, 2026)
+- **Postmortem:** [View Report](demos/20260330-bluegreen-typo/postmortem-final.md)
+- **Summary:** A typo in the frontend-canary environment variable caused 11 hours of intermittent 500 errors.
+- **Why it's cool:** Features an amazing "U-Shape" traffic graph showing the impact and the satisfying recovery after the patch.
 
-### Incident 2: Online Boutique Cluster Outage (Firewall & Canary) (2026-04-14)
-- **Postmortem:** [Online Boutique Cluster Outage](demos/20260414-outage/postmortem-final.md)
-- **Summary:** Autonomously diagnosed a "poisonous" canary deployment with an environment variable typo and isolated a VPC firewall rule blocking external traffic.
-
-### Incident 3: The "Triple-Threat" Simultaneous Outage (2026-04-04)
-- **Postmortem:** [Triple-Threat Investigation](demos/online-boutique-triple-threat/postmortem-final.md)
-- **Summary:** Handled three overlapping failures: a rogue firewall rule, an Istio fault injection, and a deployment typo, using event correlation to distinguish network vs. app layers.
-- **Why it's cool:** Features complex, annotation-heavy graphs proving deep technical correlation across the entire stack.
-
-### Incident 4: The "Four-Headed Hydra" Complex Failure (2026-04-02)
-- **Postmortem:** [Four-Headed Hydra Postmortem](demos/four-headed-hydra/postmortem-final2.md)
+### Incident 2: The "Four-Headed Hydra" Complex Failure (April 2, 2026)
+- **Postmortem:** [Four-Headed Hydra Postmortem](demos/20260402-four-headed-hydra/postmortem-final2.md)
 - **Summary:** Investigated a "Hydra" of failures including OTel collector misconfiguration, an Istio "blackhole," and GKE node churn.
 - **Why it's cool:** Uses high-resolution incident visualizations and an engaging, emoji-rich narrative that showcases the AI's "personality."
 
-### Incident 5: AI-Generated Architecture Insights (demo03) (2026-04-02)
-- **Postmortem:** [Visual Investigation](demos/online-boutique-visual-investigation/postmortem-final.md)
+### Incident 3: AI-Generated Architecture Insights (demo03) (April 2, 2026)
+- **Postmortem:** [Visual Investigation](demos/20260402-visual-investigation/postmortem-final.md)
 - **Summary:** Used Gemini's multimodal capabilities to generate and annotate architecture diagrams representing the incident's impact.
 - **Why it's cool:** Demonstrates using `nano-banana` to bridge the gap between abstract logs and visual system understanding during a complex service-mesh failure.
 
-### Incident 6: Frontend Canary Typo (Bluegreen - demo01) (March 30, 2026)
-- **Postmortem:** [View Report](demos/March-30-2026-bluegreen-typo/postmortem-final.md)
-- **Summary:** A typo in the frontend-canary environment variable caused 11 hours of intermittent 500 errors.
-- **Why it's cool:** Features an amazing "U-Shape" traffic graph showing the impact and the satisfying recovery after the patch.
+### Incident 4: The "Triple-Threat" Simultaneous Outage (April 4, 2026)
+- **Postmortem:** [Triple-Threat Investigation](demos/20260404-triple-threat/postmortem-final.md)
+- **Summary:** Handled three overlapping failures: a rogue firewall rule, an Istio fault injection, and a deployment typo, using event correlation to distinguish network vs. app layers.
+- **Why it's cool:** Features complex, annotation-heavy graphs proving deep technical correlation across the entire stack.
+
+### Incident 5: Random 500s (Istio Service Discovery Failure) (April 9, 2026)
+- **Postmortem:** [Istio Service Discovery Failure](demos/20260409-demo06a/post-mortem/postmortem-final.md)
+- **Summary:** Independently investigated HTTP 500 errors and identified a faulty Istio `VirtualService` with a 100% abort fault, uncovering a latent instability in the Istio control plane.
+
+### Incident 6: Online Boutique Cluster Outage (Firewall & Canary) (April 14, 2026)
+- **Postmortem:** [Online Boutique Cluster Outage](demos/20260414-outage/postmortem-final.md)
+- **Summary:** Autonomously diagnosed a "poisonous" canary deployment with an environment variable typo and isolated a VPC firewall rule blocking external traffic.
 
 ## Execution Safety
 
