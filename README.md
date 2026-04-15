@@ -33,6 +33,11 @@ We have validated the SRE Extension across several simulated incident scenarios:
 - **Summary:** Used Gemini's multimodal capabilities to generate and annotate architecture diagrams representing the incident's impact.
 - **Why it's cool:** Demonstrates using `nano-banana` to bridge the gap between abstract logs and visual system understanding during a complex service-mesh failure.
 
+### Incident 6: Frontend Canary Typo (Bluegreen) (March 30, 2026)
+- **Postmortem:** [View Report](demos/March-30-2026-bluegreen-typo/postmortem-final.md)
+- **Summary:** A typo in the frontend-canary environment variable caused 11 hours of intermittent 500 errors.
+- **Why it's cool:** Features an amazing "U-Shape" traffic graph showing the impact and the satisfying recovery after the patch.
+
 ## Execution Safety
 
 Safety is strictly enforced:

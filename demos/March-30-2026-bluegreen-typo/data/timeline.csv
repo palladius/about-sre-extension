@@ -1,0 +1,8 @@
+Time,Description,Milestone
+2026-03-30 18:34:00 US/Pacific,frontend-canary deployed with broken PRODUCT_CATALOG_SERVICE_ADDR (productcatalogservices:3550 instead of productcatalogservice:3550),Start of Incident
+2026-03-30 18:35:00 US/Pacific,Customers randomly begin receiving 500 errors when accessing product pages due to load balancer sending traffic to misconfigured canary pods,
+2026-03-31 03:00:00 US/Pacific,Error Budget burn alert triggers due to sustained 500 errors in frontend,
+2026-03-31 05:30:00 US/Pacific,madhavikarra@ identify specific product endpoint (LS4PSXUNUM) throwing 500 errors and wall of STDOUT errors: 'name resolver error: produced zero addresses',Incident Detected
+2026-03-31 05:40:00 US/Pacific,ricc@ analyzes frontend-canary environment variables and discovers the 'services' typo,
+2026-03-31 05:50:00 US/Pacific,ricc@ applies patch replacing 'productcatalogservices:3550' with 'productcatalogservice:3550',Mitigation
+2026-03-31 05:55:00 US/Pacific,Canary pods successfully resolve product catalog; 500 errors cease; error rate returns to baseline 0%,Incident end

@@ -1,0 +1,5 @@
+- [x] Create output directory.
+- [x] Create PLAN.md.
+- [x] Create timeline.csv.
+- [x] Draft postmortem-final.md.
+- [x] Review and present to user.
