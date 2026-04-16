@@ -4,6 +4,8 @@
 
 ## Motivation
 
+SRE Extension will soon be here: https://github.com/gemini-cli-extensions/sre 
+
 The SRE Extension for Gemini CLI streamlines incident response by integrating deep cloud expertise and observability directly into the terminal. It automates data aggregation from Cloud Logging, Monitoring, and Kubernetes to provide a unified timeline, uses AI to generate hypotheses and suggest low-risk mitigations, and facilitates the automatic creation of blameless postmortems—all while maintaining human-in-the-loop control for safe operations.
 
 ## Results
