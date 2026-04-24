@@ -40,6 +40,11 @@ We have validated the SRE Extension across several simulated incident scenarios:
 - **Postmortem:** [Online Boutique Cluster Outage](demos/20260414-outage/postmortem-final.md)
 - **Summary:** Autonomously diagnosed a "poisonous" canary deployment with an environment variable typo and isolated a VPC firewall rule blocking external traffic.
 
+### Incident 7: Double-Whammy Outage (NetworkPolicy & Canary Typo) (April 24, 2026)
+- **Postmortem:** [Checkout Outage and Intermittent Frontend 500s](demos/20260424-ricc-investigation-alejandro/postmortem-final.md)
+- **Summary:** Investigated a dual-failure scenario involving a total checkout outage due to a restrictive NetworkPolicy and intermittent 500 errors from a misconfigured canary deployment.
+- **Why it's cool:** Showcases precise RCA using audit logs and connectivity timeout patterns to correlate multiple concurrent failures.
+
 ## Execution Safety
 
 Safety is strictly enforced:

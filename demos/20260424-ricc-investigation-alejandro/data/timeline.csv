@@ -1,0 +1,13 @@
+Time,Description,Milestone
+2026-04-24 07:06:24 US/Pacific,ricc@ applied update-checkout-from-frontend NetworkPolicy via kubectl (poisonous configuration),Start of Incident
+2026-04-24 07:46:59 US/Pacific,ricc@ updated frontend-canary deployment with productcatalogservices typo,
+2026-04-24 10:45:00 US/Pacific,Users start reporting "unable to purchase" errors,Incident detected
+2026-04-24 10:47:23 US/Pacific,Investigation started by Gemini CLI,
+2026-04-24 10:52:15 US/Pacific,Identified frontend timeouts to checkoutservice,
+2026-04-24 10:54:30 US/Pacific,Root Cause identified: poisonous NetworkPolicy update-checkout-from-frontend,
+2026-04-24 10:57:45 US/Pacific,Mitigation: Deleted update-checkout-from-frontend NetworkPolicy,Mitigation
+2026-04-24 10:58:30 US/Pacific,Checkout flow verified: First successful PlaceOrder at 17:36:19Z,
+2026-04-24 11:05:00 US/Pacific,New report: Intermittent 500 errors on homepage,
+2026-04-24 11:10:30 US/Pacific,Root Cause identified: Typo in frontend-canary environment variables,
+2026-04-24 11:15:20 US/Pacific,Mitigation: Scaled up stable frontend to 2 and drained faulty canary to 0,Mitigation
+2026-04-24 11:16:00 US/Pacific,Intermittent 500 errors resolved. Site healthy.,Incident end
