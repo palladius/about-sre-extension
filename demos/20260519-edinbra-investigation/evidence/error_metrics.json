@@ -1,0 +1,12 @@
+[
+  {
+    "metric": { "labels": { "severity": "ERROR" }, "type": "logging.googleapis.com/log_entry_count" },
+    "points": [
+      {"interval": {"endTime": "2026-05-19T12:50:00Z"}, "value": {"int64Value": "50"}},
+      {"interval": {"endTime": "2026-05-19T10:00:00Z"}, "value": {"int64Value": "45"}},
+      {"interval": {"endTime": "2026-05-19T05:00:00Z"}, "value": {"int64Value": "48"}},
+      {"interval": {"endTime": "2026-05-19T01:00:00Z"}, "value": {"int64Value": "42"}},
+      {"interval": {"endTime": "2026-05-19T13:10:00Z"}, "value": {"int64Value": "2"}}
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+Time,Description,Milestone
+2026-05-19 00:46:22 UTC,Deployment of frontend and frontend-canary rolled out along with NetworkPolicy update-checkout-from-frontend. Traffic to checkoutservice gets immediately blocked.,Start of Incident
+2026-05-19 10:00:00 UTC,Users start complaining about inability to purchase products. Support is notified and escalates to SRE.,Incident Detected
+2026-05-19 12:49:18 UTC,SRE ricc@ confirms frontend reachable but sees 500 errors in frontend logs indicating i/o timeout to checkoutservice.,
+2026-05-19 12:55:00 UTC,ricc@ identifies root cause: NetworkPolicy restricting checkoutservice ingress.,
+2026-05-19 12:57:00 UTC,ricc@ deletes poisonous NetworkPolicy. Checkout starts working for main frontend.,Mitigation
+2026-05-19 13:00:00 UTC,Verification confirms general checkouts are succeeding.,
+2026-05-19 13:05:00 UTC,ricc@ identifies secondary root cause in frontend-canary (typo in PRODUCT_CATALOG_SERVICE_ADDR).,
+2026-05-19 13:10:00 UTC,ricc@ deletes broken frontend-canary deployment.,End of Incident

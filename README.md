@@ -45,6 +45,11 @@ We have validated the SRE Extension across several simulated incident scenarios:
 - **Summary:** Investigated a dual-failure scenario involving a total checkout outage due to a restrictive NetworkPolicy and intermittent 500 errors from a misconfigured canary deployment.
 - **Why it's cool:** Showcases precise RCA using audit logs and connectivity timeout patterns to correlate multiple concurrent failures.
 
+### Incident 8: The Edinburgh Investigation 🏴󠁧󠁢󠁳󠁣󠁴󠁿 - Checkout Outage (May 19, 2026)
+- **Postmortem:** [Edinburgh Investigation Postmortem](demos/20260519-edinbra-investigation/postmortem-final.md)
+- **Summary:** Investigated a total checkout failure triggered by a misconfigured `NetworkPolicy` and a broken canary deployment, showcasing rapid root cause analysis and mitigation.
+- **Why it's cool:** Demonstrates end-to-end incident handling, from identifying dropped traffic and 500 errors to removing a "poisonous" network policy to restore 100% checkout availability.
+
 ## Execution Safety
 
 Safety is strictly enforced:
