@@ -50,6 +50,11 @@ We have validated the SRE Extension across several simulated incident scenarios:
 - **Summary:** Investigated a total checkout failure triggered by a misconfigured `NetworkPolicy` and a broken canary deployment, showcasing rapid root cause analysis and mitigation.
 - **Why it's cool:** Demonstrates end-to-end incident handling, from identifying dropped traffic and 500 errors to removing a "poisonous" network policy to restore 100% checkout availability.
 
+### Incident 9: 🎬 The "Director's Cut" Checkout Outage (May 20, 2026)
+- **Postmortem:** [Official Video Postmortem](demos/20260520-official-video-investigation/postmortem-final.md)
+- **Summary:** Investigated a total checkout failure and a broken canary homepage. It was a tale of two tragedies: a poisonous NetworkPolicy and a configuration typo, brought to you in stunning high definition.
+- **Why it's cool:** "Lights, Camera, Mitigation!" This is the official video investigation—recorded live for your viewing pleasure. Grab some popcorn and watch Gemini CLI perform rapid RCA and slay the outage monster on YouTube.
+
 ## Execution Safety
 
 Safety is strictly enforced:

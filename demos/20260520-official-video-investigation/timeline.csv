@@ -1,0 +1,9 @@
+timestamp,event,milestone
+2026-05-19T19:59:49Z,NetworkPolicy update-checkout-from-frontend created blocking ingress to checkoutservice,Start of Incident
+2026-05-19T20:00:11Z,Deployment frontend-canary created with typo in PRODUCT_CATALOG_SERVICE_ADDR,
+2026-05-20T13:32:30Z,frontend-canary starts throwing product retrieval errors,
+2026-05-20T13:33:07Z,stable frontend starts throwing checkout timeouts,
+2026-05-20T13:35:00Z,Users report checkout failures; investigation started,Incident Detected
+2026-05-20T13:36:00Z,RCA completed. Typo and NetworkPolicy identified.,
+2026-05-20T13:36:45Z,NetworkPolicy deleted and canary Deployment patched,Mitigation
+2026-05-20T13:37:31Z,Verification successful. Error rates drop to zero.,Incident end
