@@ -55,6 +55,11 @@ We have validated the SRE Extension across several simulated incident scenarios:
 - **Summary:** Investigated a total checkout failure and a broken canary homepage. It was a tale of two tragedies: a poisonous NetworkPolicy and a configuration typo, brought to you in stunning high definition.
 - **Why it's cool:** "Lights, Camera, Mitigation!" This is the official video investigation—recorded live for your viewing pleasure. Grab some popcorn and watch Gemini CLI perform rapid RCA and slay the outage monster on YouTube.
 
+### Incident 10: 🏎️🎩 The FIRST Antigravity PostMortem (May 28, 2026)
+- **Postmortem:** [First agy Postmortem](showcases/online-boutique-first-agy-pomo/postmortem-final.md)
+- **Summary:** The historical first SRE investigation and PostMortem completed under the Antigravity CLI (`agy`) harness, diagnosing a restrictive Calico NetworkPolicy and canary pod DNS typo.
+- **Why it's cool:** Features a high-fidelity dual-axis graph clearly overlaying the flat-lined checkout block (0% success rate) with the canary-depressed overall traffic success rate (~67%).
+
 ## Execution Safety
 
 Safety is strictly enforced:

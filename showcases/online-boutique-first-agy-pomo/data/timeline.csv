@@ -1,0 +1,16 @@
+Time,Description,Milestone
+2026-05-26 13:39:02 UTC,Deployment of faulty NetworkPolicy update-checkout-from-frontend,Start of Incident
+2026-05-26 13:39:12 UTC,Canary release frontend-canary deployed with productcatalogservices hostname typo,
+2026-05-28 16:33:53 US/Central,SRE Investigator Benjamin started research into available GCP resources,
+2026-05-28 16:34:28 US/Central,Support escalates multiple customer complaints about boutique purchase failures,Incident Detected
+2026-05-28 16:35:04 US/Central,Confirmed boutique frontend is running at external IP http://34.55.56.97/,
+2026-05-28 16:35:23 US/Central,Discovered checkoutservice dial tcp timeouts in frontend gRPC logs,
+2026-05-28 16:35:37 US/Central,Identified faulty NetworkPolicy limiting checkoutservice ingress,
+2026-05-28 16:36:41 US/Central,Deleted faulty NetworkPolicy update-checkout-from-frontend,Mitigation
+2026-05-28 16:37:38 US/Central,Deleted hung checkoutservice-55c958c6c-6r5l2 pod to clear hung socket,
+2026-05-28 16:38:25 US/Central,Identified name resolver typo in frontend-canary deployment spec,
+2026-05-28 16:38:36 US/Central,Patched frontend-canary deployment with correct productcatalogservice hostname,
+2026-05-28 16:39:19 US/Central,Deleted production frontend pods to flush stale persistent connection pool caches,
+2026-05-28 16:39:36 US/Central,Verified all stable frontend pods are successfully rolled out,
+2026-05-28 16:39:39 US/Central,Confirmed checkout service is successfully processing orders without failures,Incident End
+2026-05-28 16:43:58 US/Central,Deleted validated frontend-canary deployment to return exclusively to stable baseline,

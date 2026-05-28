@@ -1,0 +1,8 @@
+{
+  "deployment": "frontend-canary",
+  "error_env": {
+    "PRODUCT_CATALOG_SERVICE_ADDR": "productcatalogservices:3550"
+  },
+  "correct_value": "productcatalogservice:3550",
+  "log_error": "could not retrieve products: rpc error: code = Unavailable desc = name resolver error: produced zero addresses"
+}
