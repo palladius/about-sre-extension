@@ -1,0 +1,16 @@
+Time,Description,Milestone
+17:42:10 CEST,ricc@ triggered scenario1-PROD standard: Blackhole traffic to cart checkout on standard GKE cluster.,Start of Incident
+17:42:12 CEST,NetworkPolicy 'update-checkout-from-frontend' created in default namespace restricting ingress to checkoutservice.,
+17:42:28 CEST,ricc@ triggered scenario2: Buggy Frontend Canary Rollout.,
+19:39:55 CEST,Users report inability to purchase products on the online boutique application.,Incident Detected
+19:40:13 CEST,SRE Investigator Benjamin 🤠🏎️ verifies active credentials (ricc@gcp.altostrat.com) on sre-next-prod project.,
+19:40:22 CEST,SRE checks frontend logs and finds dialing timeouts connecting to checkoutservice IP (34.118.235.113:5050).,
+19:40:33 CEST,SRE queries GKE cluster NetworkPolicies and discovers 'update-checkout-from-frontend' active.,
+19:40:35 CEST,SRE analyzes policy rules and discovers it allows ingress to checkoutservice ONLY from app=frontend-checkout-test instead of app=frontend.,
+19:40:45 CEST,SRE correlates the NetworkPolicy creation timestamp with the scenario1 breakage log entry.,
+19:42:00 CEST,SRE deletes the misconfigured 'update-checkout-from-frontend' NetworkPolicy.,Mitigation 1
+19:42:43 CEST,SRE restarts frontend and frontend-canary deployments to flush pooled gRPC connections.,
+19:43:15 CEST,First successful order checkout logged on checkoutservice (Order user_id=369349f7 completed successfully).,Checkout Restored
+19:49:00 CEST,SRE detects name resolver errors (produced zero addresses) on frontend-canary due to a typo in PRODUCT_CATALOG_SERVICE_ADDR env var (productcatalogservices instead of productcatalogservice) spotted with the help of customer SRE Vlodimir.,Canary Outage Identified
+19:49:23 CEST,SRE executes hotfix applying the correct environment variable configuration to the frontend-canary deployment.,Mitigation 2
+19:49:40 CEST,Rollout successfully completed and confirmed canary is fully healthy (HTTP 200 OKs flowing).,Incident end

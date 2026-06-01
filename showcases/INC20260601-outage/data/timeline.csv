@@ -1,0 +1,13 @@
+Time,Description,Milestone
+2026-06-01 18:22:39 CEST,ricc@ applied scenario1-PROD standard (applied NetworkPolicy update-checkout-from-frontend),Start of Incident
+2026-06-01 18:22:51 CEST,ricc@ applied scenario2 (rolled out buggy frontend-canary deployment),
+2026-06-01 18:34:44 CEST,Incident escalated to SRE Jennifer via support case lamenting checkout and home page issues,Incident detected
+2026-06-01 18:35:00 CEST,SRE Jennifer@ verified GCP credentials and GKE cluster active context,
+2026-06-01 18:35:20 CEST,SRE Jennifer@ detected HTTP 500 on main LB IP http://34.55.56.97/,
+2026-06-01 18:35:25 CEST,SRE Jennifer@ analyzed frontend logs finding gRPC dial timeouts and name resolution failures,
+2026-06-01 18:35:33 CEST,SRE Jennifer@ isolated canary typo (productcatalogservices) in frontend-canary deployment env variables,
+2026-06-01 18:35:46 CEST,SRE Jennifer@ discovered the update-checkout-from-frontend NetworkPolicy in default namespace,
+2026-06-01 18:35:50 CEST,SRE Jennifer@ identified ingress podSelector app=frontend-checkout-test mismatch with standard frontend label,
+2026-06-01 18:36:37 CEST,SRE Jennifer@ deleted the update-checkout-from-frontend NetworkPolicy,Mitigation
+2026-06-01 18:36:40 CEST,SRE Jennifer@ scaled down frontend-canary replicas to 0,
+2026-06-01 18:36:48 CEST,SRE Jennifer@ completed verification loop. All requests returning 200 OK,Incident end

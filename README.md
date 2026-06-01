@@ -70,6 +70,11 @@ We have validated the SRE Extension across several simulated incident scenarios:
 - **Summary:** An in-depth telemetry analysis of a concurrent GKE checkout blackout (Calico blocking port 5050) and a flaky product catalog canary (DNS typo).
 - **Why it's cool:** Features high-resolution transaction resampling demonstrating how round-robin balancing mathematically results in a measured ~60% success rate on the canary endpoint.
 
+### Incident 13: GKE Outage Multi-Endpoint & Flaky Canary (June 1, 2026)
+- **Postmortem:** [Bespoke 3-Panel Postmortem](showcases/INC20260601-outage/postmortem-final.md)
+- **Summary:** Diagnosed a 100% GKE checkout blackout due to a restrictive ingress NetworkPolicy alongside a flaky catalog canary (DNS typo).
+- **Why it's cool:** Displays a high-fidelity 3-panel incident graph cleanly overlaying the separate checkout and catalog availability drops on top of traffic.
+
 ## Execution Safety
 
 Safety is strictly enforced:
