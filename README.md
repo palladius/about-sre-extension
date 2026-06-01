@@ -60,6 +60,16 @@ We have validated the SRE Extension across several simulated incident scenarios:
 - **Summary:** The historical first SRE investigation and PostMortem completed under the Antigravity CLI (`agy`) harness, diagnosing a restrictive Calico NetworkPolicy and canary pod DNS typo.
 - **Why it's cool:** Features a high-fidelity dual-axis graph clearly overlaying the flat-lined checkout block (0% success rate) with the canary-depressed overall traffic success rate (~67%).
 
+### Incident 11: GDG Cloud Zurich Demo (May 28, 2026)
+- **Postmortem:** [GDG Cloud Zurich Postmortem](showcases/20260528-gdg-cloud-zrh-checkout-canary/postmortem-final.md)
+- **Summary:** Handled a live GKE checkout outage (NetworkPolicy block) and a broken canary release (DNS name resolver typo)—spotted with the help of customer SRE Vlodimir—in front of 150 people at GDG Cloud Zurich.
+- **Why it's cool:** Completed end-to-end diagnosis, hotfix, and high-fidelity graph generation completely live under 3 minutes, showing a beautiful recovery curve.
+
+### Incident 12: Dual Outage In-Depth Analysis (June 1, 2026)
+- **Postmortem:** [Dual Outage Postmortem](showcases/20260601-onlineboutique-dualoutage/postmortem-final.md)
+- **Summary:** An in-depth telemetry analysis of a concurrent GKE checkout blackout (Calico blocking port 5050) and a flaky product catalog canary (DNS typo).
+- **Why it's cool:** Features high-resolution transaction resampling demonstrating how round-robin balancing mathematically results in a measured ~60% success rate on the canary endpoint.
+
 ## Execution Safety
 
 Safety is strictly enforced:
